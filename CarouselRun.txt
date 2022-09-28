@@ -1,0 +1,39 @@
+import static com.epam.rd.autotasks.DecrementingCarousel.*;
+
+public class CarouselRun {
+    int position = 0;
+    int number = 0;
+    public static boolean allNegative (int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) return false;
+        }
+        return true;
+    }
+    public int next() {
+
+        if (allNegative(arr)) return -1;
+
+        if (position >= capacity) position = 0;
+
+        if (arr[position] <= 0) {
+            if (position == arr.length - 1) {
+                position = 0;
+                if (arr[position] == 0) {
+                    return arr[++position]--;
+                }
+                else {return arr[position++]--;}
+            }
+            else {
+                return arr[++position]--;
+            }
+
+        }
+        return arr[position++]--;
+
+    }
+
+    public boolean isFinished() {
+        throw new UnsupportedOperationException();
+    }
+
+}

@@ -1,0 +1,22 @@
+public class DecrementingCarousel {
+    static int capacity;
+    int counter = 0;
+    static int [] arr ;
+    public DecrementingCarousel(int capacity) {
+        DecrementingCarousel.capacity = capacity;
+        arr = new int[capacity];
+    }
+
+    public boolean addElement(int element){
+        if (counter < capacity && element > 0) {
+            arr[counter] = element;
+            counter++;
+            return true;
+        }
+        return false;
+    }
+
+    public CarouselRun run(){
+        return new CarouselRun();
+           }
+}
